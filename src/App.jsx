@@ -1,4 +1,5 @@
 import { About } from "./About";
+import { Destination } from "./Destinations";
 import { Home } from "./Home";
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
     <>
       <Home />
       <About />
+      <Destination/>
     </>
   );
 }
