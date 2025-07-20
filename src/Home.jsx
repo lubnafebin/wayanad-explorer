@@ -52,7 +52,7 @@ export const Home = () => {
             <p className="text-xl mt-5 font-serif text-white">
               discover nature,culture & calm in every every corner
             </p>
-            <button className="mt-6 px-4 py-1 rounded-full bg-white text-green-900 font-semibold text-lg shadow-lg hover:bg-green-100 transition duration-300">
+            <button className="mt-6 px-4 py-1 rounded-full font-semibold text-lg shadow-lg border-white/30 bg-white/20 backdrop-filter backdrop-blur[10px]">
               Explore
             </button>
           </div>
