@@ -21,23 +21,22 @@ export const Home = () => {
   return (
     <>
       <div className="relative w-full h-screen overflow-hidden">
-        <nav className="fixed top-0 w-full z-50 bg-transparent text-white p-4 flex justify-between">
+        <nav className="fixed top-0 w-full bg-transparent text-white p-4 flex justify-between">
           <div className="font-bold text-xl">Wayanad</div>
-          <ul className="flex gap-8">
-            <li>
-              <a href="#home">Home</a>
-            </li>
-            <li>
-              <a href="#destinations">Destinations</a>
-            </li>
-            <li>
-              <a href="#experience">Experience</a>
-            </li>
-            <li>
-              <a href="#about">About</a>
-            </li>
+          <ul className="flex gap-6">
+            {["Home", "Destinations", "Experience", "About"].map((item, i) => (
+              <li key={i}>
+                <a
+                  href={`#${item.toLowerCase()}`}
+                  className="px-4 py-2 rounded-full transition duration-300 hover:bg-white/10 hover:backdrop-blur-md hover:shadow-md"
+                >
+                  {item}
+                </a>
+              </li>
+            ))}
           </ul>
         </nav>
+
         <div
           className="h-screen bg-fixed bg-center bg-cover bg-no-repeat"
           style={{ backgroundImage: "url('/assets/wayanad.jpg')" }}
