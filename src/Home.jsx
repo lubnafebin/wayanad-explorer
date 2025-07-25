@@ -37,10 +37,10 @@ export const Home = () => {
           </ul>
         </nav>
 
-        <div
+        {/* <div
           className="h-screen bg-fixed bg-center bg-cover bg-no-repeat"
           style={{ backgroundImage: "url('/assets/wayanad.jpg')" }}
-        >
+        > */}
           <div
             ref={heroTextRef}
             className="h-screen flex flex-col justify-center items-center text-white text-center bg-black bg-opacity-30"
@@ -55,7 +55,7 @@ export const Home = () => {
               Explore
             </button>
           </div>
-        </div>
+        {/* </div> */}
       </div>
     </>
   );

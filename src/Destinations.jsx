@@ -10,8 +10,8 @@ const cards = [
 
 export const Destination = () => {
   return (
-    <div id="destinations" className="relative z-30 -mt-10 px-6 pt-24 pb-20">
-      <h2 className="text-4xl font-bold text-white text-center mb-12 drop-shadow-md">
+    <div id="destinations" className="relative z-30 px-6 pt-20 pb-20">
+      <h2 className="text-4xl font-bold text-white text-center mb-10 drop-shadow-md">
         Top Destinations
       </h2>
 
@@ -19,10 +19,10 @@ export const Destination = () => {
         {cards.map((card, index) => (
           <div
             key={index}
-            className="p-6 rounded-3xl bg-white/10 backdrop-blur-lg border border-white/30 shadow-xl text-white hover:scale-105 transition-transform duration-300"
+            className="p-6 rounded-2xl backdrop-blur-md bg-white/10 border border-white/20 text-white shadow-lg hover:scale-105 transition-all duration-300 min-h-[300px] flex flex-col justify-between"
           >
-            <h3 className="text-2xl font-semibold mb-3">{card.title}</h3>
-            <p className="text-white/90">{card.description}</p>
+            <h3 className="text-2xl font-semibold mb-4">{card.title}</h3>
+            <p className="text-white/80">{card.description}</p>
           </div>
         ))}
       </div>
