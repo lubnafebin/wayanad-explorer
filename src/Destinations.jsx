@@ -10,7 +10,7 @@ const cards = [
 
 export const Destination = () => {
   return (
-    <div id="destinations" className="relative z-30 px-6 pt-20 pb-20">
+    <div className="min-h-screen px-4 py-20 backdrop-blur-md bg-white/10">
       <h2 className="text-4xl font-bold text-white text-center mb-10 drop-shadow-md">
         Top Destinations
       </h2>
