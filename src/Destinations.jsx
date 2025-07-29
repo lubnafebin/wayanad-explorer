@@ -7,9 +7,9 @@ const cards = [
     description: "Beautiful multi-tiered waterfall.",
     image:"assets/meenmutty-water-falls.jpg"
   },
-  { title: "Banasura Sagar", description: "Largest earthen dam in India." },
-  { title: "Banasura Sagar", description: "Largest earthen dam in India." },
-  { title: "Banasura Sagar", description: "Largest earthen dam in India." },
+  { title: "Pookode Lake", description: "Largest earthen dam in India." ,image:"assets/pookodu.webp"},
+  { title: "Kuruvadweep", description: "Largest earthen dam in India.",image:"assets/kuruvadweep.webp" },
+  { title: "Lakkidi View Point", description: "Largest earthen dam in India." ,image:"assets/lakkidi.webp"},
 ];
 
 export const Destination = () => {
@@ -24,7 +24,7 @@ export const Destination = () => {
             <div
               key={index}
               className="min-w-[350px] h-[350px] p-6 rounded-xl backdrop-blur-md bg-white/10 border border-white/20 text-white shadow-lg hover:scale-105 transition-all duration-300 flex-shrink-0"
-            >
+            > 
               <img
                 src={card.image}
                 alt={card.title}
