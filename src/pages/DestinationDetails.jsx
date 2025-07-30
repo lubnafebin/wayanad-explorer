@@ -9,8 +9,7 @@ export const DestinationDetails = () => {
   if (!data) return <div className="p-8 text-white">Not found</div>;
 
   const goBackToDestinations = () => {
-    navigate("/"); // go back to landing
-    // after route change, smooth scroll to the cards
+    navigate("/");
     setTimeout(() => {
       document
         .getElementById("destinations")
