@@ -1,14 +1,13 @@
-import { About } from "./About";
-import { Destination } from "./Destinations";
-import { Home } from "./Home";
+import { Routes, Route } from "react-router-dom";
+import { Landing } from "./pages/Landing";
+import { DestinationDetails } from "./pages/DestinationDetails";
 
 function App() {
   return (
-    <>
-      <Home />
-      <Destination />
-      <About />
-    </>
+    <Routes>
+      <Route path="/" element={<Landing />} />
+      <Route path="/destination/:slug" element={<DestinationDetails />} />
+    </Routes>
   );
 }
 
