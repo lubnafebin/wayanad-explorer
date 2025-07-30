@@ -1,15 +1,15 @@
 const cards = [
-  { title: "Chembra Peak", description: "Highest peak in Wayanad." ,image:"/assets/wayanad.jpg"},
-  { title: "Edakkal Caves", description: "Ancient cave carvings." ,image:"assets/edakkal-caves.webp"},
-  { title: "Banasura Sagar", description: "Largest earthen dam in India.",image:"assets/banasura-sagar-dam.avif" },
+  { title: "Chembra Peak", description: "The highest peak in Wayanad, famous for its heart-shaped lake." ,image:"/assets/wayanad.jpg"},
+  { title: "Edakkal Caves", description: "Ancient caves featuring rare stone age carvings and pictographs." ,image:"assets/edakkal-caves.webp"},
+  { title: "Banasura Sagar", description: "The largest earthen dam in India with scenic hill views.",image:"assets/banasura-sagar-dam.avif" },
   {
     title: "Meenmutty Falls",
-    description: "Beautiful multi-tiered waterfall.",
+    description: "A breathtaking multi-tiered waterfall deep inside the forest.",
     image:"assets/meenmutty-water-falls.jpg"
   },
-  { title: "Pookode Lake", description: "Largest earthen dam in India." ,image:"assets/pookodu.webp"},
-  { title: "Kuruvadweep", description: "Largest earthen dam in India.",image:"assets/kuruvadweep.webp" },
-  { title: "Lakkidi View Point", description: "Largest earthen dam in India." ,image:"assets/lakkidi.webp"},
+  { title: "Pookode Lake", description: "A scenic freshwater lake surrounded by evergreen forests." ,image:"assets/pookodu.webp"},
+  { title: "Kuruvadweep", description: " A pristine, uninhabited river island rich in flora and fauna.",image:"assets/kuruvadweep.webp" },
+  { title: "Lakkidi View Point", description: "A viewpoint offering panoramic vistas of misty valleys." ,image:"assets/lakkidi.webp"},
 ];
 
 export const Destination = () => {
@@ -23,7 +23,7 @@ export const Destination = () => {
           {cards.map((card, index) => (
             <div
               key={index}
-              className="min-w-[350px] h-[350px] p-6 rounded-xl backdrop-blur-md bg-white/10 border border-white/20 text-white shadow-lg hover:scale-105 transition-all duration-300 flex-shrink-0"
+              className="max-w-[340px] min-w-[340px] h-[350px] p-6 rounded-xl backdrop-blur-md bg-white/10 border border-white/20 text-white shadow-lg hover:scale-105 transition-all duration-300 flex-shrink-0"
             > 
               <img
                 src={card.image}
