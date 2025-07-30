@@ -9,7 +9,7 @@ export const DestinationDetails = () => {
   if (!data) return <div className="p-8 text-white">Not found</div>;
 
   const goBackToDestinations = () => {
-    navigate("/");
+    navigate("/"); 
     setTimeout(() => {
       document
         .getElementById("destinations")
@@ -17,10 +17,10 @@ export const DestinationDetails = () => {
     }, 0);
   };
   return (
-    <div className="min-h-screen p-6 md:p-10 text-white bg-black/40 backdrop-blur-sm">
+    <div className="min-h-screen p-6 md:p-10 text-black backdrop-blur-sm">
       <button
         onClick={goBackToDestinations}
-        className="mb-6 text-white/80 hover:text-white underline"
+        className="mb-6 text-black/80 underline"
       >
         ← Back
       </button>
