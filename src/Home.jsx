@@ -27,7 +27,7 @@ export const Home = () => {
     <div id="home" className="relative w-full h-screen">
       <nav className="fixed top-0 w-full bg-transparent text-white p-4 flex justify-between z-10">
         <div className="font-bold text-xl">Wayanad</div>
-        <ul className="flex gap-6">
+        <ul className="flex gap-4">
           {["Home", "Destinations", "Experience", "About"].map((item, i) => (
             <li key={i}>
               <a
