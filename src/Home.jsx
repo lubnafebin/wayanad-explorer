@@ -28,7 +28,7 @@ export const Home = () => {
       <nav className="fixed top-0 w-full bg-transparent text-white p-4 flex justify-between z-10">
         <div className="font-bold text-xl">Wayanad</div>
         <ul className="flex gap-4">
-          {["Home", "Destinations", "Experience", "About"].map((item, i) => (
+          {["Home", "Destinations", "Restaurants", "Hotel"].map((item, i) => (
             <li key={i}>
               <a
                 href={`#${item.toLowerCase()}`}

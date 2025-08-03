@@ -11,6 +11,10 @@ export const DESTINATIONS = [
     ],
     ticket: "₹50 per person",
     mapUrl: "https://maps.google.com/?q=Chembra+Peak",
+    hours: {
+      open: "07:00",
+      close: "17:00",
+    },
   },
   {
     slug: "edakkal-caves",
@@ -24,6 +28,10 @@ export const DESTINATIONS = [
     ],
     ticket: "₹40 per person",
     mapUrl: "https://maps.google.com/?q=Edakkal+Caves",
+     hours: {
+      open: "09:00",
+      close: "16:00",
+    },
   },
   {
     slug: "banasura-sagar-dam",
@@ -37,6 +45,10 @@ export const DESTINATIONS = [
     ],
     ticket: "₹30 per person",
     mapUrl: "https://maps.google.com/?q=Banasura+Sagar+Dam",
+     hours: {
+      open: "08:00",
+      close: "17:00",
+    },
   },
   {
     slug: "meenmutty-falls",
@@ -46,6 +58,10 @@ export const DESTINATIONS = [
     images: ["/assets/meenmutty-water-falls.jpg"],
     ticket: "₹430 per person",
     mapUrl: "https://maps.google.com/?q=Banasura+Sagar+Dam",
+     hours: {
+      open: "09:00",
+      close: "17:00",
+    },
   },
   {
     slug: "pookode-lake",
@@ -55,6 +71,10 @@ export const DESTINATIONS = [
     images: ["/assets/pookodu.webp"],
     ticket: "₹130 per person",
     mapUrl: "https://maps.google.com/?q=Banasura+Sagar+Dam",
+     hours: {
+      open: "09:00",
+      close: "17:00",
+    },
   },
   {
     slug: "kuruvadweep",
@@ -64,6 +84,10 @@ export const DESTINATIONS = [
     images: ["/assets/kuruvadweep.webp"],
     ticket: "₹230 per person",
     mapUrl: "https://maps.google.com/?q=Banasura+Sagar+Dam",
+     hours: {
+      open: "09:00",
+      close: "3:00 PM",
+    },
   },
   {
     slug: "lakkidi-view-point",
@@ -73,5 +97,9 @@ export const DESTINATIONS = [
     images: ["/assets/lakkidi.webp"],
     ticket: "₹330 per person",
     mapUrl: "https://maps.google.com/?q=Banasura+Sagar+Dam",
+     hours: {
+      open: "00:00",
+      close: "23:59",
+    },
   },
 ];
