@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { FiSearch } from "react-icons/fi";
 
 export const Home = () => {
   const handleExplore = () => {
@@ -25,10 +26,14 @@ export const Home = () => {
 
   return (
     <div id="home" className="relative w-full h-screen">
+      <div
+        className="fixed top-0 left-0 w-full h-screen bg-cover bg-center -z-10"
+        style={{ backgroundImage: "url('/assets/wayanad.jpg')" }}
+      />
       <nav className="fixed top-0 w-full bg-transparent text-white p-4 flex justify-between z-10">
         <div className="font-bold text-xl">Wayanad</div>
         <ul className="flex gap-4">
-          {["Home", "Destinations", "Restaurants", "Hotel"].map((item, i) => (
+          {["Destinations", "Restaurants", "Hotel"].map((item, i) => (
             <li key={i}>
               <a
                 href={`#${item.toLowerCase()}`}
@@ -41,13 +46,17 @@ export const Home = () => {
         </ul>
       </nav>
       <div
-        className="fixed top-0 left-0 w-full h-screen bg-cover bg-center -z-10"
-        style={{ backgroundImage: "url('/assets/wayanad.jpg')" }}
-      />
-      <div
         ref={heroTextRef}
         className="h-screen flex flex-col justify-center items-center text-white text-center bg-black bg-opacity-30"
       >
+        <div className="flex items-center mb-5 bg-white/10 backdrop-blur-md rounded-full px-4 py-3 w-[90%] max-w-md border border-white/30 shadow-md">
+          <FiSearch className="text-white mr-2" size={20} />
+          <input
+            type="text"
+            placeholder="Search..."
+            className="bg-transparent outline-none text-white placeholder-white w-full"
+          />
+        </div>
         <h1 className="font-bold text-5xl text-white ">
           Explore the beauty of Wayanad
         </h1>

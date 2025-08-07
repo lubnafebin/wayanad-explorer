@@ -45,7 +45,7 @@ export const DestinationDetails = () => {
       {/* Back Button */}
       <button
         onClick={goBackToDestinations}
-        className="mb-6 text-black/70 hover:text-black transition"
+        className="mb-4 text-black/70 hover:text-black transition"
       >
         ← Back to Destinations
       </button>
