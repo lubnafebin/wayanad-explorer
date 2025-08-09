@@ -35,7 +35,7 @@ export const Navbar = () => {
 
       {/* Mobile Menu */}
       {open && (
-        <div className="absolute top-14 left-0 w-full bg-black bg-opacity-80 text-white flex flex-col items-center gap-4 py-4 sm:hidden">
+        <div className="absolute top-14 left-0 w-full backdrop-blur-md bg-white/5 border border-white/20 bg-opacity-80 text-white flex flex-col items-center gap-4 py-4 sm:hidden">
           {["Destinations", "Restaurants", "Hotel"].map((item, i) => (
             <a
               key={i}

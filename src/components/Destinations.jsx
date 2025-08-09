@@ -33,7 +33,7 @@ export const Destination = () => {
       id="destinations"
       className="relative min-h-screen px-4 py-20 bg-transparent z-10"
     >
-      <h2 className="text-4xl font-bold text-white text-center mb-10 drop-shadow-md">
+      <h2 className="text-2xl sm:text-4xl font-bold text-white text-center mb-10 drop-shadow-md">
         Top Destinations
       </h2>
 
@@ -59,16 +59,16 @@ export const Destination = () => {
               <Link
                 key={d.slug}
                 to={`/destination/${d.slug}`}
-                className="max-w-[340px] min-w-[340px] h-[350px] p-6 rounded-xl backdrop-blur-md bg-white/10 border border-white/20 text-white shadow-lg hover:scale-105 transition-all duration-300 flex-shrink-0"
+                className="max-w-[280px] min-w-[280px] sm:max-w-[340px] sm:min-w-[340px] h-[300px] sm:h-[350px] p-4 sm:p-6 rounded-xl backdrop-blur-md bg-white/10 border border-white/20 text-white shadow-lg hover:scale-105 transition-all duration-300 flex-shrink-0"
               >
                 <img
                   src={d.images[0]}
                   alt={d.title}
-                  className="h-40 w-full object-cover rounded-md mb-3"
+                  className="h-32 sm:h-40 w-full object-cover rounded-md mb-3"
                 />
-                <h3 className="text-xl font-semibold mb-2">{d.title}</h3>
-                <p className="text-sm text-white/80 mb-3">{d.short}</p>
-                <button className="mt-auto text-sm text-blue-200 hover:underline">
+                <h3 className="text-lg sm:text-xl font-semibold mb-2">{d.title}</h3>
+                <p className="text-xs sm:text-sm text-white/80 mb-3">{d.short}</p>
+                <button className="mt-auto text-xs sm:text-sm text-blue-200 hover:underline">
                   Explore →
                 </button>
               </Link>
