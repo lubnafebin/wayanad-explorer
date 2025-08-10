@@ -15,8 +15,8 @@ export const Navbar = () => {
         />
       </div>
       {/* Desktop Menu */}
-      <ul className="hidden sm:flex gap-4">
-        {["Destinations", "Restaurants", "Hotel"].map((item, i) => (
+      <ul className="hidden sm:flex gap-3">
+        {["Destinations", "Discover", "Things to do"].map((item, i) => (
           <li key={i}>
             <a
               href={`#${item.toLowerCase()}`}

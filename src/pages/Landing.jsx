@@ -1,7 +1,7 @@
-import { About } from "./About";
 import { Destination } from "../components/Destinations";
 import { Home } from "../Home";
 import { Navbar } from "../components/Navbar";
+import { Stays } from "./Stays";
 
 export const Landing = () => {
   return (
@@ -9,7 +9,7 @@ export const Landing = () => {
       <Navbar />
       <Home />
       <Destination />
-      <About />
+      <Stays />
     </>
   );
 };
