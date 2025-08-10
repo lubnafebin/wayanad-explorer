@@ -1,31 +1,6 @@
-import React, { useState } from "react";
-
-const sampleAccommodations = [
-  {
-    id: 1,
-    name: "Sunset Paradise Hotel",
-    type: "hotel",
-    location: "Kalpetta, Wayanad",
-    price: "₹4,500/night",
-    image: "/assets/resort.jpg",
-  },
-  {
-    id: 2,
-    name: "Hilltop Resort",
-    type: "resort",
-    location: "Meppadi, Wayanad",
-    price: "₹6,200/night",
-    image: "/assets/resort.jpg",
-  },
-  {
-    id: 3,
-    name: "Green Valley Villa",
-    type: "villa",
-    location: "Vythiri, Wayanad",
-    price: "₹7,800/night",
-    image: "/assets/resort.jpg",
-  },
-];
+import { useState } from "react";
+import { STAYS } from "../data/stays";
+import { FaStar } from "react-icons/fa";
 
 export const Stays = () => {
   const [filter, setFilter] = useState("All");
@@ -34,8 +9,8 @@ export const Stays = () => {
 
   const filteredData =
     filter === "All"
-      ? sampleAccommodations
-      : sampleAccommodations.filter(
+      ? STAYS
+      : STAYS.filter(
           (item) => item.type.toLowerCase() === filter.toLowerCase()
         );
 
@@ -53,11 +28,11 @@ export const Stays = () => {
             key={cat}
             onClick={() => setFilter(cat)}
             className={`px-4 py-2 rounded-full text-white transition-all duration-300 
-              ${
-                filter === cat
-                  ? "bg-white/20 border border-white/30 shadow-lg"
-                  : "hover:bg-white/10"
-              }`}
+          ${
+            filter === cat
+              ? "bg-white/20 border border-white/30 shadow-lg"
+              : "hover:bg-white/10"
+          }`}
           >
             {cat}
           </button>
@@ -65,22 +40,29 @@ export const Stays = () => {
       </div>
 
       {/* Grid of Cards */}
-      <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {/* Horizontal Scroll Cards */}
+      <div className="flex gap-6 overflow-x-auto pb-4 scrollbar-hide">
         {filteredData.map((item) => (
           <div
             key={item.id}
-            className="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-xl shadow-lg"
+            className="relative bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-xl shadow-lg flex-shrink-0 w-64"
           >
+            {/* Rating Badge */}
+            <div className="absolute top-3 right-3 bg-black/60 px-2 py-1 rounded-full flex items-center gap-1 text-sm shadow-md">
+              <FaStar className="text-yellow-400" />
+              <span>{item.rating}</span>
+            </div>
+
             <img
               src={item.image}
               alt={item.name}
-              className="rounded-lg h-30 w-full object-cover mb-4"
+              className="rounded-lg h-40 w-full object-cover mb-4"
             />
-            <h3 className="text-xl font-bold">{item.name}</h3>
-            <p className="text-white/70">{item.location}</p>
+            <h3 className="text-lg font-bold">{item.name}</h3>
+            <p className="text-white/70 text-sm">{item.location}</p>
             <p className="text-white mt-2">{item.price}</p>
-            <button className="mt-4 px-4 py-2 bg-white/20 rounded-lg text-white hover:bg-white/30">
-              Book Now
+            <button className="mt-4 px-4 py-2 bg-white/20 rounded-lg text-white hover:bg-white/30 text-sm">
+              View Details
             </button>
           </div>
         ))}
