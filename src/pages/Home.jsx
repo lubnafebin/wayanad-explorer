@@ -28,7 +28,7 @@ export const Home = () => {
     <div id="home" className="relative w-full h-screen">
       <div
         className="fixed top-0 left-0 w-full h-screen bg-cover bg-center -z-10 sm:bg-fixed"
-        style={{ backgroundImage: "url('/assets/wayanad.jpg')" }}
+        style={{ backgroundImage: "url('/assets/destinations/wayanad.jpg')" }}
       />
       <div
         ref={heroTextRef}

@@ -36,7 +36,7 @@ export const STAYS = [
     rating:""
   },
   {
-    id: 4,
+    id: 5,
     name: "Green Valley Villa",
     type: "homestay",
     location: "Vythiri, Wayanad",
@@ -45,21 +45,21 @@ export const STAYS = [
     rating:""
   },
   {
-    id: 5,
+    id: 6,
     name: "Green Valley Villa",
     type: "resort",
     location: "Vythiri, Wayanad",
     price: "₹7,800/night",
-    image: "/assets/resort.jpg",
+    image: "/assets/stays/resort.jpg",
     rating:""
   },
   {
-    id: 6,
+    id: 7,
     name: "Green Valley Villa",
     type: "hotel",
     location: "Vythiri, Wayanad",
     price: "₹7,800/night",
-    image: "/assets/resort.jpg",
+    image: "/assets/stays/resort.jpg",
     rating:""
   },
 
