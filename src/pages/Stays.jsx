@@ -4,7 +4,7 @@ import { FaChevronLeft, FaChevronRight, FaStar } from "react-icons/fa";
 
 export const Stays = () => {
   const [filter, setFilter] = useState("All");
-  const categories = ["All", "Hotel", "Resort", "Villa", "Homestay"];
+  const categories = ["All", "Glamping", "Resort", "Villa", "Homestay"];
 
   const scrollRef = useRef(null);
   const [showLeft, setShowLeft] = useState(false);

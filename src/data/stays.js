@@ -1,65 +1,74 @@
 export const STAYS = [
    {
     id: 1,
-    name: "Sunset Paradise Hotel",
-    type: "hotel",
+    name: "Grassroots Wayanad",
+    type: "glamping",
     location: "Kalpetta, Wayanad",
-    price: "₹4,500/night",
-    image: "/assets/resort.jpg",
+    price: "from ₹5,000",
+    image: "/assets/stays/glamping.webp",
     rating:"2"
   },
   {
     id: 2,
-    name: "Hilltop Resort",
+    name: "Banasura Hill Resort",
     type: "resort",
-    location: "Meppadi, Wayanad",
-    price: "₹6,200/night",
-    image: "/assets/resort.jpg",
+    location: "Vellamunda, Wayanad",
+    price: "from ₹8,000",
+    image: "/assets/stays/resort1.webp",
     rating:"4"
   },
   {
     id: 3,
-    name: "Green Valley Villa",
+    name: "Tranquil Villa",
     type: "villa",
-    location: "Vythiri, Wayanad",
-    price: "₹7,800/night",
-    image: "/assets/resort.jpg",
+    location: "Kolagappara, Wayanad",
+    price: "from ₹6,000",
+    image: "/assets/stays/villa1.webp",
     rating:"3"
   },
   {
     id: 4,
-    name: "Green Valley Villa",
-    type: "villa",
+    name: "Petals Glamping",
+    type: "glamping",
     location: "Vythiri, Wayanad",
-    price: "₹7,800/night",
-    image: "/assets/resort.jpg",
-    rating:""
+    price: "from ₹6,500",
+    image: "/assets/stays/grt-hotel.webp",
+    rating:"5"
   },
   {
     id: 5,
-    name: "Green Valley Villa",
+    name: "Enteveedu Homestay",
     type: "homestay",
-    location: "Vythiri, Wayanad",
-    price: "₹7,800/night",
+    location: "Panamaram, Wayanad",
+    price: "from ₹3,500",
     image: "/assets/resort.jpg",
     rating:""
   },
   {
     id: 6,
-    name: "Green Valley Villa",
+    name: "Vythiri Village Resort",
     type: "resort",
     location: "Vythiri, Wayanad",
-    price: "₹7,800/night",
-    image: "/assets/stays/resort.jpg",
-    rating:""
+    price: "form ₹6,347",
+    image: "/assets/stays/resort2.webp",
+    rating:"5"
   },
   {
     id: 7,
-    name: "Green Valley Villa",
-    type: "hotel",
-    location: "Vythiri, Wayanad",
-    price: "₹7,800/night",
+    name: "Silverwoods Villa",
+    type: "villa",
+    location: "Kalpetta, Wayanad",
+    price: "from ₹9,000",
     image: "/assets/stays/resort.jpg",
+    rating:""
+  },
+   {
+    id: 8,
+    name: "Aranyakam Homestay",
+    type: "homestay",
+    location: "Meppadi, Wayanad",
+    price: "from ₹4,000",
+    image: "/assets/resort.jpg",
     rating:""
   },
 
