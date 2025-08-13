@@ -56,22 +56,29 @@ export const Destination = () => {
         >
           <div className="flex gap-x-4 px-4">
             {DESTINATIONS.map((d) => (
-              <Link
+              <div
                 key={d.slug}
-                to={`/destination/${d.slug}`}
-                className="max-w-[280px] min-w-[280px] sm:max-w-[340px] sm:min-w-[340px] h-[300px] sm:h-[350px] p-4 sm:p-6 rounded-xl backdrop-blur-md bg-white/10 border border-white/20 text-white shadow-lg hover:scale-105 transition-all duration-300 flex-shrink-0"
+                className="max-w-[280px] min-w-[280px] sm:max-w-[340px] sm:min-w-[340px] h-[300px] sm:h-[350px] p-4 sm:p-6 rounded-xl backdrop-blur-md bg-white/10 border border-white/20 text-white shadow-lg hover:scale-105 transition-all duration-300 flex-shrink-0 flex flex-col"
               >
                 <img
                   src={d.images[0]}
                   alt={d.title}
                   className="h-32 sm:h-40 w-full object-cover rounded-md mb-3"
                 />
-                <h3 className="text-lg sm:text-xl font-semibold mb-2">{d.title}</h3>
-                <p className="text-xs sm:text-sm text-white/80 mb-3">{d.short}</p>
-                <button className="mt-auto text-xs sm:text-sm text-blue-200 hover:underline">
+                <h3 className="text-lg sm:text-xl font-semibold mb-2">
+                  {d.title}
+                </h3>
+                <p className="text-xs sm:text-sm text-white/80 mb-3">
+                  {d.short}
+                </p>
+
+                <Link
+                  to={`/destination/${d.slug}`}
+                  className="mt-auto px-4 py-2 text-xs sm:text-sm rounded-lg backdrop-blur-md bg-white/10 border border-white/10 text-white shadow-lg hover:bg-white/20 transition-all duration-300 w-fit"
+                >
                   Explore →
-                </button>
-              </Link>
+                </Link>
+              </div>
             ))}
           </div>
         </div>
