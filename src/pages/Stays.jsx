@@ -40,22 +40,22 @@ export const Stays = () => {
   return (
     <div className="min-h-screen p-6 md:p-10 text-white bg-transparent">
       {/* Heading */}
-      <h1 className="text-3xl font-bold mb-4 text-center mt-10">
+      <h1 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4 text-center mt-10 mb-5">
         What are you looking for?
       </h1>
 
       {/* Filter Bar */}
-      <div className="flex flex-wrap justify-center gap-3 mb-6 p-1 bg-white/10 backdrop-blur-md rounded-full border border-white/20 w-fit mx-auto">
+      <div className="hidden lg:flex flex-wrap justify-center gap-3 mb-6 p-1 bg-white/10 backdrop-blur-md rounded-full border border-white/20 w-fit mx-auto">
         {categories.map((cat) => (
           <button
             key={cat}
             onClick={() => setFilter(cat)}
             className={`px-4 py-2 rounded-full text-white transition-all duration-300 
-          ${
-            filter === cat
-              ? "bg-white/20 border border-white/30 shadow-lg"
-              : "hover:bg-white/10"
-          }`}
+      ${
+        filter === cat
+          ? "bg-white/20 border border-white/30 shadow-lg"
+          : "hover:bg-white/10"
+      }`}
           >
             {cat}
           </button>
