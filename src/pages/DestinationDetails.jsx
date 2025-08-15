@@ -5,10 +5,16 @@ import { FaMapMarkerAlt } from "react-icons/fa";
 
 export const DestinationDetails = () => {
   const [isOpenNow, setIsOpenNow] = useState(false);
-
   const { slug } = useParams();
   const navigate = useNavigate();
   const data = DESTINATIONS.find((d) => d.slug === slug);
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, []);
 
   useEffect(() => {
     if (data?.hours) {
