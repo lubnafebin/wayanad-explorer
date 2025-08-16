@@ -12,27 +12,27 @@ export const Navbar = () => {
     {
       name: "Discover",
       dropdown: [
-        { name: "Top Destinations", link: "#top-destinations" },
-        { name: "Hidden Gems", link: "#hidden-gems" },
-        { name: "Nature Spots", link: "#nature-spots" },
+        { name: "Top Destinations", link: "#destinations" },
+        { name: "Hidden Gems", link: "/hidden-gems" },
+        { name: "Nature Spots", link: "/nature-spots" },
       ],
     },
     {
       name: "Culture",
       dropdown: [
-        { name: "Food & Cuisine", link: "#food" },
-        { name: "Festivals", link: "#festivals" },
-        { name: "Traditional Arts", link: "#arts" },
-        { name: "History", link: "#history" },
+        { name: "Food & Cuisine", link: "/food" },
+        { name: "Festivals", link: "/festivals" },
+        { name: "Traditional Arts", link: "/arts" },
+        { name: "History", link: "/history" },
       ],
     },
     {
       name: "Things to do",
       dropdown: [
-        { name: "Adventure", link: "#adventure" },
-        { name: "Parks & Nature", link: "#parks" },
-        { name: "Heritage Walks", link: "#heritage" },
-        { name: "Nightlife", link: "#nightlife" },
+        { name: "Adventure", link: "/adventure" },
+        { name: "Parks & Nature", link: "/parks" },
+        { name: "Heritage Walks", link: "/heritage" },
+        { name: "Nightlife", link: "/nightlife" },
       ],
     },
   ];
