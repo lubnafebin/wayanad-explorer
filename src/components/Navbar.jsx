@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { FiSearch, FiMenu, FiX } from "react-icons/fi";
+import { MdKeyboardArrowDown } from "react-icons/md";
 
 export const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
+  const [mobileDropdown, setMobileDropdown] = useState(null);
 
   const menuItems = [
     { name: "Home", link: "#home" },
@@ -66,14 +68,14 @@ export const Navbar = () => {
               {item.name}
             </a>
 
-            {/* Dropdown Menu */}
+            {/* Desktop Dropdown */}
             {item.dropdown && activeDropdown === item.name && (
-              <ul className="absolute left-0 top-full bg-white/10 backdrop-blur-md border border-white/20 rounded-lg mt-2 shadow-lg w-48">
+              <ul className="absolute left-0 top-full bg-white/5 backdrop-blur-md border border-white/20 rounded-lg mt-2 shadow-lg w-48">
                 {item.dropdown.map((sub, idx) => (
                   <li key={idx}>
                     <a
                       href={sub.link}
-                      className="block px-4 py-2 hover:bg-white/20 transition"
+                      className="block px-4 py-2 hover:bg-white/10 transition"
                     >
                       {sub.name}
                     </a>
@@ -92,29 +94,49 @@ export const Navbar = () => {
 
       {/* Mobile Menu */}
       {open && (
-        <div className="absolute top-14 left-0 w-full backdrop-blur-md bg-white/5 border border-white/20 text-white flex flex-col items-center gap-4 py-4 sm:hidden">
+        <div className="absolute top-14 left-0 w-full backdrop-blur-md bg-white/5 border border-white/20 bg-opacity-80 text-white flex flex-col gap-2 py-4 sm:hidden">
           {menuItems.map((item, i) => (
-            <div key={i} className="w-full text-center">
-              <a
-                href={item.link || "#"}
-                className="block px-4 py-2"
-                onClick={() => setOpen(false)}
-              >
-                {item.name}
-              </a>
-              {item.dropdown && (
-                <div className="flex flex-col text-sm text-white/80">
-                  {item.dropdown.map((sub, idx) => (
-                    <a
-                      key={idx}
-                      href={sub.link}
-                      className="px-4 py-1 hover:bg-white/10"
-                      onClick={() => setOpen(false)}
-                    >
-                      {sub.name}
-                    </a>
-                  ))}
-                </div>
+            <div key={i} className="w-full flex flex-col items-center">
+              {!item.dropdown ? (
+                <a
+                  href={item.link}
+                  className="px-4 py-2"
+                  onClick={() => setOpen(false)}
+                >
+                  {item.name}
+                </a>
+              ) : (
+                <>
+                  <button
+                    onClick={() =>
+                      setMobileDropdown(
+                        mobileDropdown === item.name ? null : item.name
+                      )
+                    }
+                    className="flex items-center justify-between w-full px-4 py-2"
+                  >
+                    {item.name}
+                    <MdKeyboardArrowDown
+                      className={`ml-1 transition-transform duration-200 ${
+                        mobileDropdown === item.name ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
+                  {mobileDropdown === item.name && (
+                    <div className="flex flex-col items-center gap-2 mt-1">
+                      {item.dropdown.map((sub, j) => (
+                        <a
+                          key={j}
+                          href={sub.link}
+                          className="px-4 py-1 text-sm"
+                          onClick={() => setOpen(false)}
+                        >
+                          {sub.name}
+                        </a>
+                      ))}
+                    </div>
+                  )}
+                </>
               )}
             </div>
           ))}
