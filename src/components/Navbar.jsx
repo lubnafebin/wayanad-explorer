@@ -36,8 +36,6 @@ export const Navbar = () => {
       dropdown: [
         { name: "Adventure", link: "/adventure", isPage: true },
         { name: "Parks & Nature", link: "/parks", isPage: true },
-        { name: "Heritage Walks", link: "/heritage", isPage: true },
-        { name: "Nightlife", link: "/nightlife", isPage: true },
       ],
     },
   ];
