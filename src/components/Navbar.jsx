@@ -1,56 +1,69 @@
 import { useState } from "react";
 import { FiSearch, FiMenu, FiX } from "react-icons/fi";
 import { MdKeyboardArrowDown } from "react-icons/md";
+import { Link, useLocation } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 export const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [mobileDropdown, setMobileDropdown] = useState(null);
 
+  const { pathname } = useLocation();
+  const isLanding = pathname === "/";
+
   const menuItems = [
-    { name: "Home", link: "#home" },
+    { name: "Home", link: "/#home", isPage: false },
     {
       name: "Discover",
       dropdown: [
-        { name: "Top Destinations", link: "#destinations" },
-        { name: "Hidden Gems", link: "/hidden-gems" },
-        { name: "Nature Spots", link: "/nature-spots" },
+        { name: "Top Destinations", link: "/#destinations", isPage: false },
+        { name: "Hidden Gems", link: "/hidden-gems", isPage: true },
+        { name: "Nature Spots", link: "/nature-spots", isPage: true },
       ],
     },
     {
       name: "Culture",
       dropdown: [
-        { name: "Food & Cuisine", link: "/food" },
-        { name: "Festivals", link: "/festivals" },
-        { name: "Traditional Arts", link: "/arts" },
-        { name: "History", link: "/history" },
+        { name: "Food & Cuisine", link: "/food", isPage: true },
+        { name: "Festivals", link: "/festivals", isPage: true },
+        { name: "Traditional Arts", link: "/arts", isPage: true },
+        { name: "History", link: "/history", isPage: true },
       ],
     },
     {
       name: "Things to do",
       dropdown: [
-        { name: "Adventure", link: "/adventure" },
-        { name: "Parks & Nature", link: "/parks" },
-        { name: "Heritage Walks", link: "/heritage" },
-        { name: "Nightlife", link: "/nightlife" },
+        { name: "Adventure", link: "/adventure", isPage: true },
+        { name: "Parks & Nature", link: "/parks", isPage: true },
+        { name: "Heritage Walks", link: "/heritage", isPage: true },
+        { name: "Nightlife", link: "/nightlife", isPage: true },
       ],
     },
   ];
 
   return (
-    <nav className="fixed top-0 w-full bg-transparent text-white p-3 flex justify-between items-center z-10">
+    <nav
+      className={`fixed top-0 w-full transition-colors duration-300 p-3 flex justify-between items-center z-10 ${
+        isLanding
+          ? "bg-transparent text-white"
+          : "bg-white text-black shadow-md"
+      }`}
+    >
       {/* Logo */}
       <div className="font-bold text-xl">Wayanad</div>
 
       {/* Search Bar */}
-      <div className="hidden sm:flex items-center bg-white/10 backdrop-blur-md rounded-full px-4 py-2 w-[90%] max-w-md border border-white/30 shadow-md">
-        <FiSearch className="text-white mr-2" size={20} />
-        <input
-          type="text"
-          placeholder="Places to go, Things to do..."
-          className="bg-transparent outline-none text-white placeholder-white w-full"
-        />
-      </div>
+      {isLanding && (
+        <div className="hidden sm:flex items-center bg-white/10 backdrop-blur-md rounded-full px-4 py-2 w-[90%] max-w-md border border-white/30 shadow-md">
+          <FiSearch className="text-white mr-2" size={20} />
+          <input
+            type="text"
+            placeholder="Places to go, Things to do..."
+            className="bg-transparent outline-none text-white placeholder-white w-full"
+          />
+        </div>
+      )}
 
       {/* Desktop Menu */}
       <ul className="hidden sm:flex gap-3 relative">
@@ -61,24 +74,46 @@ export const Navbar = () => {
             onMouseEnter={() => setActiveDropdown(item.name)}
             onMouseLeave={() => setActiveDropdown(null)}
           >
-            <a
-              href={item.link || "#"}
-              className="px-4 py-2 rounded-full hover:bg-white/10 hover:backdrop-blur-md transition"
-            >
-              {item.name}
-            </a>
+            {item.isPage ? (
+              // If it's a separate page
+              <Link
+                to={item.link}
+                className="px-4 py-2 rounded-full hover:bg-white/10 hover:backdrop-blur-md transition"
+              >
+                {item.name}
+              </Link>
+            ) : (
+              // If it's a section inside Landing (using #)
+              <HashLink
+                smooth
+                to={item.link}
+                className="px-4 py-2 rounded-full hover:bg-white/10 hover:backdrop-blur-md transition"
+              >
+                {item.name}
+              </HashLink>
+            )}
 
             {/* Desktop Dropdown */}
             {item.dropdown && activeDropdown === item.name && (
               <ul className="absolute left-0 top-full bg-white/5 backdrop-blur-md border border-white/20 rounded-lg mt-2 shadow-lg w-48">
                 {item.dropdown.map((sub, idx) => (
                   <li key={idx}>
-                    <a
-                      href={sub.link}
-                      className="block px-4 py-2 hover:bg-white/10 transition"
-                    >
-                      {sub.name}
-                    </a>
+                    {sub.isPage ? (
+                      <Link
+                        to={sub.link}
+                        className="block px-4 py-2 hover:bg-white/10 transition"
+                      >
+                        {sub.name}
+                      </Link>
+                    ) : (
+                      <HashLink
+                        smooth
+                        to={sub.link}
+                        className="block px-4 py-2 hover:bg-white/10 transition"
+                      >
+                        {sub.name}
+                      </HashLink>
+                    )}
                   </li>
                 ))}
               </ul>

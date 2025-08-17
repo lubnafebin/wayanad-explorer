@@ -23,8 +23,8 @@ const hiddenGems = [
 ];
 export const HiddenGems = () => {
   return (
-    <div className="p-6">
-      <h1 className="text-3xl font-bold mb-6 text-center">
+    <div className="p-8">
+      <h1 className="text-3xl font-bold mb-4 text-center">
         Hidden Gems of Wayanad
       </h1>
 
