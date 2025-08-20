@@ -4,6 +4,7 @@ import { DestinationDetails } from "./pages/DestinationDetails";
 import { HiddenGems } from "./pages/HiddenGems";
 import { Adventure } from "./pages/Adventure";
 import { Navbar } from "./components/Navbar";
+import { NatureSpots } from "./pages/NatureSpots";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/" element={<Landing />} />
         <Route path="/destination/:slug" element={<DestinationDetails />} />
         <Route path="/hidden-gems" element={<HiddenGems />} />
+        <Route path="/nature-spots" element={<NatureSpots />} />
         <Route path="/adventure" element={<Adventure />} />
       </Routes>
     </>
