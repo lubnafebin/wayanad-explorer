@@ -1,4 +1,4 @@
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { DESTINATIONS } from "../data/destination.js";
 import { useEffect, useState } from "react";
 import { FaMapMarkerAlt } from "react-icons/fa";
@@ -6,7 +6,6 @@ import { FaMapMarkerAlt } from "react-icons/fa";
 export const DestinationDetails = () => {
   const [isOpenNow, setIsOpenNow] = useState(false);
   const { slug } = useParams();
-  const navigate = useNavigate();
   const data = DESTINATIONS.find((d) => d.slug === slug);
 
   useEffect(() => {
@@ -37,27 +36,10 @@ export const DestinationDetails = () => {
 
   if (!data) return <div className="p-8 text-white">Not found</div>;
 
-  const goBackToDestinations = () => {
-    navigate("/");
-    setTimeout(() => {
-      document
-        .getElementById("destinations")
-        ?.scrollIntoView({ behavior: "smooth" });
-    }, 0);
-  };
-
   return (
     <div className="min-h-screen bg-white text-black px-6 md:px-20 py-8">
-      {/* Back Button */}
-      <button
-        onClick={goBackToDestinations}
-        className="mb-4 text-black/70 hover:text-black transition"
-      >
-        ← Back to Destinations
-      </button>
-
       {/* Title */}
-      <h1 className="text-4xl font-bold mb-2">{data.title}</h1>
+      <h1 className="text-4xl font-bold mb-2 mt-8">{data.title}</h1>
       <a
         href={data.mapUrl}
         target="_blank"
