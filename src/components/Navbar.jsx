@@ -28,7 +28,6 @@ export const Navbar = () => {
         { name: "Food & Cuisine", link: "/food", isPage: true },
         { name: "Festivals", link: "/festivals", isPage: true },
         { name: "Traditional Arts", link: "/arts", isPage: true },
-        { name: "History", link: "/history", isPage: true },
       ],
     },
     {
