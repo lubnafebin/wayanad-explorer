@@ -6,6 +6,7 @@ import { Adventure } from "./pages/Adventure";
 import { Navbar } from "./components/Navbar";
 import { NatureSpots } from "./pages/NatureSpots";
 import { FoodPage } from "./pages/FoodPage";
+import { FestivalsPage } from "./pages/FestivalsPage";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/hidden-gems" element={<HiddenGems />} />
         <Route path="/nature-spots" element={<NatureSpots />} />
         <Route path="/food" element={<FoodPage />} />
+        <Route path="/festivals" element={<FestivalsPage />} />
         <Route path="/adventure" element={<Adventure />} />
       </Routes>
     </>

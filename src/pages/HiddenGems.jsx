@@ -1,26 +1,3 @@
-// const hiddenGems = [
-//   {
-//     name: "Thirunelli Temple",
-//     description:
-//       "An ancient temple hidden amidst forests and mountains, known as the 'Kashi of the South'.",
-//     image:
-//       "https://www.keralatourism.org/images/destination/large/thirunelli_temple_wayanad20131031105344_318_1.jpg",
-//   },
-//   {
-//     name: "Kanthanpara Waterfalls",
-//     description:
-//       "A small yet beautiful waterfall surrounded by lush greenery, perfect for a peaceful retreat.",
-//     image:
-//       "https://www.keralatourism.org/images/destination/mobile/kanthanpara_waterfalls_wayanad20131031105208_313_1.jpg",
-//   },
-//   {
-//     name: "Soochipara Falls",
-//     description:
-//       "Also called Sentinel Rock Waterfalls, this three-tiered waterfall is tucked away in a dense forest and is a great spot for trekking and rock climbing.",
-//     image:
-//       "https://www.keralatourism.org/images/destination/large/soochipara_waterfalls20131031105713_317_1.jpg",
-//   },
-// ];
 export const HiddenGems = () => {
   return (
     <div className="text-gray-800">
