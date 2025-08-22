@@ -27,7 +27,6 @@ export const Navbar = () => {
       dropdown: [
         { name: "Food & Cuisine", link: "/food", isPage: true },
         { name: "Festivals", link: "/festivals", isPage: true },
-        { name: "Traditional Arts", link: "/arts", isPage: true },
       ],
     },
     {
