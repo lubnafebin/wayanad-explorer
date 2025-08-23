@@ -1,3 +1,4 @@
+import React, { useRef } from "react";
 import {
   FaMountain,
   FaTree,
@@ -5,51 +6,84 @@ import {
   FaShip,
   FaCompass,
 } from "react-icons/fa";
+import { GiJeep } from "react-icons/gi";
+
 const adventures = [
   {
     id: 1,
     title: "Trekking & Hiking",
-    desc: "Climb Chembra Peak and Banasura Hills for breathtaking views.",
     icon: <FaMountain size={40} className="text-blue-500" />,
-    difficulty: "Intermediate",
+    info: [
+      "Chembra Peak – Heart-shaped Lake",
+      "Banasura Hills – Panoramic views",
+      "Best time: Oct – Mar",
+      "Difficulty: Intermediate",
+    ],
   },
   {
     id: 2,
     title: "Wildlife Safari",
-    desc: "Explore Muthanga & Tholpetty forests with rich wildlife.",
     icon: <FaTree size={40} className="text-green-600" />,
-    difficulty: "Easy",
+    info: [
+      "Muthanga Wildlife Sanctuary",
+      "Tholpetty Forest Reserve",
+      "Best time: Nov – May",
+      "Difficulty: Easy",
+    ],
   },
   {
     id: 3,
     title: "Camping",
-    desc: "Spend a night under the stars in Wayanad forests.",
     icon: <FaCampground size={40} className="text-orange-500" />,
-    difficulty: "Beginner",
+    info: [
+      "Forest & Riverside camps",
+      "Night sky watching",
+      "Best time: Year-round",
+      "Difficulty: Beginner",
+    ],
   },
   {
     id: 4,
     title: "Boating & Kayaking",
-    desc: "Paddle through Pookode Lake and Kuruva Island.",
     icon: <FaShip size={40} className="text-sky-500" />,
-    difficulty: "Beginner",
+    info: [
+      "Pookode Lake",
+      "Kuruva Island",
+      "Best time: Oct – May",
+      "Difficulty: Beginner",
+    ],
   },
   {
     id: 5,
     title: "Ziplining",
-    desc: "Experience the thrill of South India’s longest zipline.",
     icon: <FaCompass size={40} className="text-purple-500" />,
-    difficulty: "Extreme",
+    info: [
+      "South India’s longest zipline",
+      "Adrenaline-packed thrill",
+      "Best time: Year-round",
+      "Difficulty: Extreme",
+    ],
   },
   {
     id: 6,
     title: "Off-road Jeep Rides",
-    desc: "Adventure through rugged terrains near Edakkal Caves.",
-    icon: <FaCompass size={40} className="text-purple-500" />,
-    difficulty: "Intermediate",
+    icon: <GiJeep size={40} className="text-red-500" />,
+    info: [
+      "Edakkal Caves trail",
+      "Mud & rocky terrain",
+      "Best time: Oct – Mar",
+      "Difficulty: Intermediate",
+    ],
   },
 ];
+
 export const Adventure = () => {
+  const adventureRef = useRef(null);
+
+  const scrollToAdventures = () => {
+    adventureRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
@@ -57,7 +91,7 @@ export const Adventure = () => {
         className="relative h-[60vh] bg-cover bg-center flex items-center justify-center text-white"
         style={{
           backgroundImage:
-            "url('https://images.unsplash.com/photo-1693878658414-42bed08fc192?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
+            "url('https://media.istockphoto.com/id/1179176550/photo/little-boy-ziplining-in-forest.webp?a=1&b=1&s=612x612&w=0&k=20&c=pNw9AdcbjBxCDeTxjSUuaWie26Um280cXudzgjKDdBA=')",
         }}
       >
         <div className="bg-black/50 absolute inset-0"></div>
@@ -68,14 +102,17 @@ export const Adventure = () => {
           <p className="text-lg md:text-xl">
             Discover thrilling experiences in Wayanad
           </p>
-          <button className="mt-6 px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-2xl shadow-lg">
+          <button
+            onClick={scrollToAdventures}
+            className="mt-6 px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-2xl shadow-lg"
+          >
             Explore Adventures
           </button>
         </div>
       </section>
 
       {/* Adventure Activities */}
-      <section className="py-12 px-6 max-w-6xl mx-auto">
+      <section ref={adventureRef} className="py-12 px-6 max-w-6xl mx-auto">
         <h2 className="text-3xl font-bold text-center mb-10">
           Popular Adventures
         </h2>
@@ -89,26 +126,14 @@ export const Adventure = () => {
                 {adv.icon}
                 <h3 className="text-xl font-semibold">{adv.title}</h3>
               </div>
-              <p className="text-gray-600 mb-3">{adv.desc}</p>
-              <span className="text-sm font-medium px-3 py-1 rounded-full bg-gray-100">
-                Difficulty: {adv.difficulty}
-              </span>
+              <ul className="text-gray-600 list-disc list-inside space-y-2">
+                {adv.info.map((point, i) => (
+                  <li key={i}>{point}</li>
+                ))}
+              </ul>
             </div>
           ))}
         </div>
-      </section>
-
-      {/* Quick Info */}
-      <section className="bg-blue-50 py-12 px-6 text-center">
-        <h2 className="text-2xl font-bold mb-4">Quick Adventure Info</h2>
-        <p className="text-gray-700 max-w-2xl mx-auto mb-6">
-          Best time to visit: October - May • Carry trekking shoes, raincoat &
-          water bottles • Always hire certified local guides for trekking &
-          safaris.
-        </p>
-        <button className="px-6 py-3 bg-green-600 hover:bg-green-700 text-white rounded-2xl shadow-lg">
-          Plan Your Trip
-        </button>
       </section>
     </div>
   );
